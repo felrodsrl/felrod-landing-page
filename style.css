@@ -1,0 +1,8 @@
+.enlarge-on-cursor-hover {
+  cursor: pointer;
+  transition: transform 0.7s ease;
+}
+
+.enlarge-on-cursor-hover:hover {
+  transform: scale(1.15);
+}

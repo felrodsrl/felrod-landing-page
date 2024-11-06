@@ -30,7 +30,7 @@
           />
         </a>
 
-        <!-- toggle buton for mobile nav -->
+        <!-- toggle button for mobile nav -->
         <button
           class="navbar-toggler"
           type="button"
@@ -40,7 +40,9 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span>
+            <i id="navbar-toggler-icon" class="bi bi-list fs-1"></i>
+          </span>
         </button>
 
         <!-- navbar links -->
@@ -75,7 +77,7 @@
       </div>
     </nav>
 
-    <section id="nosotros" class="bg-dark-subtle">
+    <section id="nosotros" class="bg-light">
       <h1>Nosotros</h1>
       <h1>Nosotros</h1>
       <h1>Nosotros</h1>
@@ -99,24 +101,87 @@
     </section>
 
     <!-- Contactos -->
-    <section id="contactos" class="bg-dark-subtle bg-gradient p-5">
+    <section id="contactos" class="bg-light p-5">
       <h1 class="text-center">Contactos</h1>
-      <div class="container">
+      <div class="container-lg">
         <div class="row">
-          <div class="col col-xl-6 bg-primary">
+          <div class="col col-12 col-md-6 bg-dark-subtle">
+            <div class="ratio ratio-4x3">
+              <iframe
+                width="425"
+                height="350"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-55.12076854705811%2C-27.501771876885606%2C-55.106971263885505%2C-27.49553843178112&amp;layer=mapnik&amp;marker=-27.498650387771548%2C-55.1138699054718"
+                style="border: 1px solid black"
+              ></iframe>
+            </div>
+            <small
+              ><a
+                href="https://www.openstreetmap.org/?mlat=-27.498650&amp;mlon=-55.113870#map=17/-27.498655/-55.113870&amp;layers=N"
+                >Ver el mapa más grande</a
+              >
+            </small>
+          </div>
+          <div class="col col-xl-6 bg-secondary">
+            <i class="bi bi-envelope"></i> contacto@felrod.com
+          </div>
+        </div>
+        <hr class="border border-primary border-3 opacity-75" />
+        <div class="row">
+          <p class="col">
+            <p class="lead text-center">
+              ¿Tienes alguna consulta o quieres que nos contactemos contigo? No
+              dudes en dejarnos un mensaje
+            </p>
             <form id="contact-form">
               <input id="contact-number" type="hidden" name="contact_number" />
 
-              <label for="name">Nombre</label>
-              <input id="name" type="text" name="user_name" />
+              <div class="row">
+                <div class="col-lg-6 mb-3">
+                  <label for="name">Nombre</label>
+                  <div class="input-group mb-3">
+                    <span
+                      class="input-group-text border border-dark-subtle mt-1"
+                      ><i class="bi bi-person-fill"></i>
+                    </span>
+                    <input
+                      id="name"
+                      type="text"
+                      name="user_name"
+                      class="form-control border border-dark-subtle mt-1"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-6 mb-3">
+                  <label for="email">Email</label>
+                  <div class="input-group mb-3">
+                    <span
+                      class="input-group-text border border-dark-subtle mt-1"
+                      ><i class="bi bi-envelope-fill"></i>
+                    </span>
+                    <input
+                      id="email"
+                      type="email"
+                      name="user_email"
+                      class="form-control border border-dark-subtle mt-1"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
 
-              <label for="email">Email</label>
-              <input id="email" type="email" name="user_email" required />
+              <label for="message">Mensaje (Opcinal)</label>
+              <textarea
+                id="message"
+                name="user_message"
+                class="form-control border border-dark-subtle mt-1"
+              ></textarea>
 
-              <label for="message">Mensaje</label>
-              <textarea id="message" name="user_message"></textarea>
-
-              <button id="submit-button" type="submit">
+              <button
+                id="submit-button"
+                type="submit"
+                class="btn btn-primary mt-3"
+              >
                 <span
                   id="form-submit-button-spinner"
                   class="spinner-border spinner-border-sm visually-hidden"
@@ -127,10 +192,10 @@
                   Enviar
                 </span>
               </button>
+              <p id="form-submition-message" class="col col-md-3 col-sm-6 my-3 p-3 rounded-3 d-none">
+                lsfdjl
+              </p>
             </form>
-          </div>
-          <div class="col col-xl-6 bg-secondary">
-            <i class="bi bi-envelope"></i> contacto@felrod.com
           </div>
         </div>
       </div>
@@ -147,5 +212,6 @@
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
     <script type="text/javascript" src="formHandler.js"></script>
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

@@ -4,7 +4,7 @@
 }
 
 .enlarge-on-cursor-hover:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
 }
 
 html {
@@ -16,4 +16,28 @@ html {
   html {
     scroll-margin-top: 60px;
   }
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 17px;
+  text-decoration: none;
+  z-index: 1000;
+  transition: transform 0.7s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe57;
+  color: white;
+  transform: scale(1.05);
 }

@@ -1,6 +1,6 @@
 // Initialize EmailJS
 (function () {
-  const EMAILJS_PUBLIC_KEY = "DYdfmJQD5vqZZQaxg";
+  const EMAILJS_PUBLIC_KEY = "K9vpFLOoR3eMQByzT";
   emailjs.init({
     publicKey: EMAILJS_PUBLIC_KEY,
   });

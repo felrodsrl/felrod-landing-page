@@ -8,5 +8,12 @@
 }
 
 html {
-  scroll-padding-top: 80px;
+  scroll-padding-top: 82px;
+}
+
+/* On mobile mobile 82px didn't scroll enough */
+@media (max-width: 768px) {
+  html {
+    scroll-margin-top: 60px;
+  }
 }

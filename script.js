@@ -22,7 +22,7 @@ const initializeWhatsAppButton = () => {
   const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
   if (isMobile) {
     whatsAppButton.href =
-      "https://wa.me/5493764711717?text=Hola,%20me%20gustar%C3%ADa%20contactarlos.";
+      "https://wa.me/5493764711717?text=Hola,%20me%20gustar%C3%ADa%20contactarlos."; // TODO: Add the correct phone number
   }
 
   // Display spinner for a short period of time when clicked

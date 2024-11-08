@@ -102,10 +102,12 @@
 
     <!-- Contactos -->
     <section id="contactos" class="bg-light p-5">
-      <h1 class="text-center">Contactos</h1>
+      <h1 class="text-center mb-4">Contactos</h1>
       <div class="container-lg">
+        <!-- Map and contact container -->
         <div class="row">
-          <div class="col col-12 col-md-6 bg-dark-subtle">
+          <!-- Map container -->
+          <div class="col col-12 col-md-6">
             <div class="ratio ratio-4x3">
               <iframe
                 width="425"
@@ -122,13 +124,70 @@
               </a>
             </small>
           </div>
-          <div class="col col-xl-6 bg-secondary">
-            <i class="bi bi-envelope"></i> contacto@felrod.com
+          <!-- Contact container -->
+          <div
+            class="col col-xl-6 d-flex flex-column justify-content-between"
+            style="min-width: 268px"
+          >
+            <div class="row m-3 h-25">
+              <div class="col">
+                <div class="row p-2 shadow rounded-3">
+                  <div class="col col-12 col-sm-3 col-lg-2 text-center">
+                    <i class="bi bi-geo-alt-fill" style="font-size: 50px"></i>
+                  </div>
+                  <div
+                    class="col col-12 col-sm-9 col-lg-10 text-center text-sm-start"
+                  >
+                    <p class="my-1">
+                      <span class="fs-4">Ubicación: </span><br />
+                      <!-- TODO: add the correct location -->
+                      <strong class="lead">sdfsdf</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row m-3 h-25">
+              <div class="col">
+                <div class="row p-2 shadow rounded-3">
+                  <div class="col col-12 col-sm-3 col-lg-2 text-center">
+                    <i class="bi bi-telephone-fill" style="font-size: 50px"></i>
+                  </div>
+                  <div
+                    class="col col-12 col-sm-9 col-lg-10 text-center text-sm-start"
+                  >
+                    <p class="my-1">
+                      <span class="fs-4">Teléfono: </span><br />
+                      <!-- TODO: add the correct phone number -->
+                      <strong class="lead">+54-9-3764-711717</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row m-3 h-25">
+              <div class="col">
+                <div class="row p-2 shadow rounded-3">
+                  <div class="col col-12 col-sm-3 col-lg-2 text-center">
+                    <i class="bi bi-envelope-fill" style="font-size: 50px"></i>
+                  </div>
+                  <div
+                    class="col col-12 col-sm-9 col-lg-10 text-center text-sm-start"
+                  >
+                    <p class="my-1">
+                      <span class="fs-4">Email: </span><br />
+                      <strong class="lead">contacto@felrod.com</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <hr class="border border-primary border-3 opacity-75" />
+        <hr class="border border-primary border-3 rounded-5 opacity-75" />
 
+        <!-- Contact form container -->
         <div class="row">
           <p class="col"></p>
           <p class="lead text-center">
@@ -202,6 +261,8 @@
       </div>
     </section>
 
+    <!-- WhatsApp Button -->
+    <!-- TODO: Add the correct phone number -->
     <a
       href="https://web.whatsapp.com/send?phone=5493764711717&text=Hola,%20me%20gustar%C3%ADa%20contactarlos."
       target="_blank"

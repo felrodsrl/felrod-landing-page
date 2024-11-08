@@ -62,22 +62,17 @@ async function sendEmail(form) {
 
 function handleSuccess() {
   clearFormFields();
-  const formSubmtionMessage = document.getElementById("form-submition-message");
-  formSubmtionMessage.innerText = "Su mensaje fue enviado correctamente";
-  formSubmtionMessage.classList.remove("bg-danger-subtle");
-  formSubmtionMessage.classList.add("bg-success-subtle");
-  formSubmtionMessage.classList.remove("d-none");
-  formSubmtionMessage.scrollIntoView();
+  appendAlert(
+    "<i class='bi bi-check-circle-fill'></i> Su mensaje fue enviado correctamente",
+    "success"
+  );
 }
 
 function handleFailure(error) {
-  const formSubmtionMessage = document.getElementById("form-submition-message");
-  formSubmtionMessage.innerText =
-    "Hubo un error al enviar el formulario, intentelo de nuevo más tarde";
-  formSubmtionMessage.classList.remove("bg-success-subtle");
-  formSubmtionMessage.classList.add("bg-danger-subtle");
-  formSubmtionMessage.classList.remove("d-none");
-  formSubmtionMessage.scrollIntoView();
+  appendAlert(
+    "<i class='bi bi-exclamation-triangle-fill'></i> Hubo un error al enviar el formulario, intentelo de nuevo más tarde",
+    "danger"
+  );
   console.log("FAILED...", error);
 }
 
@@ -86,3 +81,22 @@ function clearFormFields() {
   document.getElementById("email").value = "";
   document.getElementById("message").value = "";
 }
+
+const alertPlaceholder = document.getElementById("alertPlaceholder");
+const appendAlert = (message, type) => {
+  const wrapper = document.createElement("div");
+  wrapper.innerHTML = [
+    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+    `  <div>${message}</div>`,
+    `  <button`,
+    `    type="button"`,
+    `    class="btn-close"`,
+    `    data-bs-dismiss="alert"`,
+    `    aria-label="Close"`,
+    `  ></button>`,
+    `</div>`,
+  ].join("");
+
+  alertPlaceholder.append(wrapper);
+  alertPlaceholder.scrollIntoView();
+};

@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Felrod</title>
     <link rel="icon" type="image/x-icon" href="/assets/felrod-icon.jpg" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
+    <link href="/css/main.min.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- navbar -->
@@ -77,14 +78,33 @@
       </div>
     </nav>
 
-    <section id="nosotros" class="bg-light">
-      <h1>Nosotros</h1>
-      <h1>Nosotros</h1>
-      <h1>Nosotros</h1>
-      <h1>Nosotros</h1>
-      <h1>Nosotros</h1>
-      <h1>Nosotros</h1>
-      <h1>Nosotros</h1>
+    <!-- Nosotros -->
+    <section id="nosotros" class="bg-light p-4">
+      <h1 class="text-center mb-2 p-2 text-shadow">Nosotros</h1>
+      <div class="container-lg">
+        <div class="row">
+          <div class="col col-12 col-md-6 p-3">
+            <p class="lead">
+              Somos una empresa de San Ignacio, Misiones. Fundada con el
+              objetivo de proveer maquinarias y servicios industriales para la
+              región. Ayudando a toda industria que lo necesite. Valoramos el
+              profesionalismo, la atención y presentación. Lo cuál buscamos
+              plasmar en cada uno de nuestros trabajos.
+            </p>
+          </div>
+          <div class="col col-12 col-md-6 p-3 text-center">
+            <img
+              src="/assets/felrod-logo-with-shadow.png"
+              class="img-fluid"
+              alt="image"
+              style="width: 500px"
+            />
+            <p style="font-family: 'Poppins', sans-serif">
+              <b><i>Vinimos a hacer más fácil la industria.</i></b>
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="productos-y-servicios">
@@ -101,13 +121,13 @@
     </section>
 
     <!-- Contactos -->
-    <section id="contactos" class="bg-light p-5">
-      <h1 class="text-center mb-4">Contactos</h1>
+    <section id="contactos" class="bg-light p-4">
+      <h1 class="text-center mb-2 p-2 text-shadow">Contactos</h1>
       <div class="container-lg">
         <!-- Map and contact container -->
         <div class="row">
           <!-- Map container -->
-          <div class="col col-12 col-md-6">
+          <div class="col col-12 col-md-6 p-3">
             <div class="ratio ratio-4x3">
               <!-- TODO: Add map with real location -->
               <iframe
@@ -127,7 +147,7 @@
           </div>
           <!-- Contact container -->
           <div
-            class="col col-xl-6 d-flex flex-column justify-content-between"
+            class="col col-xl-6 d-flex flex-column justify-content-between p-3"
             style="min-width: 268px"
           >
             <div class="row m-3 h-25">
@@ -286,7 +306,7 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
-    <script type="text/javascript" src="formHandler.js"></script>
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="js/formHandler.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>

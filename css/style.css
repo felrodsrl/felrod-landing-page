@@ -48,6 +48,13 @@ html {
   transform: scale(1.05);
 }
 
-.text-shadow {
+.heading-1 {
+  text-align: center;
+  margin-bottom: 0.5rem; /* mb-2 */
+  padding: 0.5rem; /* p-2 */
   text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3); /* Adjust values as needed */
+}
+
+.product-image-bg-color {
+  background: #f1f1f1;
 }

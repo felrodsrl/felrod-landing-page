@@ -47,10 +47,7 @@
         </button>
 
         <!-- navbar links -->
-        <div
-          class="collapse navbar-collapse align-content-center"
-          id="main-nav"
-        >
+        <div class="collapse navbar-collapse align-content-center" id="main-nav">
           <ul class="navbar-nav">
             <li class="nav-item mx-2">
               <a class="nav-link" href="/">Inicio</a>
@@ -59,20 +56,14 @@
               <a class="nav-link" href="#nosotros">Nosotros</a>
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-link" href="#productos-y-servicios"
-                >Productos y Servicios
-              </a>
+              <a class="nav-link" href="#productos-y-servicios">Productos y Servicios </a>
             </li>
             <li>
-              <a class="nav-link mx-2 d-md-none" href="#contactos"
-                >Contactanos
-              </a>
+              <a class="nav-link mx-2 d-md-none" href="#contactos">Contactanos </a>
             </li>
           </ul>
         </div>
-        <a
-          class="btn btn-primary justify-content-end d-none d-md-inline"
-          href="#contactos"
+        <a class="btn btn-primary justify-content-end d-none d-md-inline" href="#contactos"
           >Contactanos
         </a>
       </div>
@@ -80,15 +71,14 @@
 
     <!-- Nosotros -->
     <section id="nosotros" class="bg-light p-4">
-      <h1 class="text-center mb-2 p-2 text-shadow">Nosotros</h1>
       <div class="container-lg">
+        <h1 class="heading-1">Nosotros</h1>
         <div class="row">
           <div class="col col-12 col-md-6 p-3">
             <p class="lead">
-              Somos una empresa de San Ignacio, Misiones. Fundada con el
-              objetivo de proveer maquinarias y servicios industriales para la
-              región. Ayudando a toda industria que lo necesite. Valoramos el
-              profesionalismo, la atención y presentación. Lo cuál buscamos
+              Somos una empresa de San Ignacio, Misiones. Fundada con el objetivo de proveer
+              maquinarias y servicios industriales para la región. Ayudando a toda industria que lo
+              necesite. Valoramos el profesionalismo, la atención y presentación. Lo cuál buscamos
               plasmar en cada uno de nuestros trabajos.
             </p>
           </div>
@@ -96,7 +86,7 @@
             <img
               src="/assets/felrod-logo-with-shadow.png"
               class="img-fluid"
-              alt="image"
+              alt="felrod-logo-with-shadow"
               style="width: 500px"
             />
             <p style="font-family: 'Poppins', sans-serif">
@@ -107,22 +97,42 @@
       </div>
     </section>
 
-    <section id="productos-y-servicios">
-      <h1>Productos y Servicios</h1>
-      <h1>Productos y Servicios</h1>
-      <h1>Productos y Servicios</h1>
-      <h1>Productos y Servicios</h1>
-      <h1>Productos y Servicios</h1>
-      <h1>Productos y Servicios</h1>
-      <h1>Productos y Servicios</h1>
-      <h1>Productos y Servicios</h1>
-      <h1>Productos y Servicios</h1>
-      <h1>Productos y Servicios</h1>
+    <!-- Productos y Servicios -->
+    <section id="productos-y-servicios" class="p-4">
+      <div class="container-lg">
+        <h1 class="heading-1">Productos y Servicios</h1>
+        <div class="row m-2">
+          <!-- Left column with image -->
+          <div
+            class="col col-12 col-md-3 offset-md-1 offset-xl-2 mb-3 mb-md-0 me-3 p-2 border border-2 border-black rounded-3 product-image-bg-color"
+          >
+            <img
+              src="assets/envasadora_1.png"
+              class="img-fluid"
+              alt="envasadora_1"
+              style="width: 500px"
+            />
+          </div>
+
+          <!-- Right column with text content -->
+          <div class="col col-12 col-md-7 col-xl-5 g-0 d-flex flex-column">
+            <div class="border border-2 border-black rounded-3 mb-3 bg-primary bg-opacity-75">
+              <p class="fs-5 fw-bold m-3">Envasadora Semiautomática de 5Kg-30Kg</p>
+            </div>
+            <div class="border border-2 border-black rounded-3 flex-fill bg-secondary bg-opacity-50">
+              <p class="lead fw-semibold m-3">
+                Envasadora de polvos y granos con controlador de peso para grandes tamaños de
+                bolsas. Asegura una dosificación continua, rápida y eficiente
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contactos -->
     <section id="contactos" class="bg-light p-4">
-      <h1 class="text-center mb-2 p-2 text-shadow">Contactos</h1>
+      <h1 class="heading-1">Contactos</h1>
       <div class="container-lg">
         <!-- Map and contact container -->
         <div class="row">
@@ -156,9 +166,7 @@
                   <div class="col col-12 col-sm-3 col-lg-2 text-center">
                     <i class="bi bi-geo-alt-fill" style="font-size: 50px"></i>
                   </div>
-                  <div
-                    class="col col-12 col-sm-9 col-lg-10 text-center text-sm-start"
-                  >
+                  <div class="col col-12 col-sm-9 col-lg-10 text-center text-sm-start">
                     <p class="my-1">
                       <span class="fs-4">Ubicación: </span><br />
                       <!-- TODO: add the correct location -->
@@ -174,9 +182,7 @@
                   <div class="col col-12 col-sm-3 col-lg-2 text-center">
                     <i class="bi bi-telephone-fill" style="font-size: 50px"></i>
                   </div>
-                  <div
-                    class="col col-12 col-sm-9 col-lg-10 text-center text-sm-start"
-                  >
+                  <div class="col col-12 col-sm-9 col-lg-10 text-center text-sm-start">
                     <p class="my-1">
                       <span class="fs-4">Teléfono: </span><br />
                       <!-- TODO: add the correct phone number -->
@@ -192,9 +198,7 @@
                   <div class="col col-12 col-sm-3 col-lg-2 text-center">
                     <i class="bi bi-envelope-fill" style="font-size: 50px"></i>
                   </div>
-                  <div
-                    class="col col-12 col-sm-9 col-lg-10 text-center text-sm-start"
-                  >
+                  <div class="col col-12 col-sm-9 col-lg-10 text-center text-sm-start">
                     <p class="my-1">
                       <span class="fs-4">Email: </span><br />
                       <strong class="lead">contacto@felrod.com</strong>
@@ -212,8 +216,8 @@
         <div class="row">
           <p class="col"></p>
           <p class="lead text-center">
-            ¿Tienes alguna consulta o quieres que nos contactemos contigo? No
-            dudes en dejarnos un mensaje
+            ¿Tienes alguna consulta o quieres que nos contactemos contigo? No dudes en dejarnos un
+            mensaje
           </p>
           <form id="contact-form">
             <input id="contact-number" type="hidden" name="contact_number" />
@@ -258,20 +262,14 @@
               class="form-control border border-dark-subtle mt-1"
             ></textarea>
 
-            <button
-              id="submit-button"
-              type="submit"
-              class="btn btn-primary mt-3"
-            >
+            <button id="submit-button" type="submit" class="btn btn-primary mt-3">
               <span
                 id="form-submit-button-spinner"
                 class="spinner-border spinner-border-sm visually-hidden"
                 role="status"
               >
               </span>
-              <span id="form-submit-button-inner-text" role="status">
-                Enviar
-              </span>
+              <span id="form-submit-button-inner-text" role="status"> Enviar </span>
             </button>
             <div id="alertPlaceholder" class="col col-md-3 col-sm-6 mt-2"></div>
           </form>

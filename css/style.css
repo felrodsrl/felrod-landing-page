@@ -1,3 +1,5 @@
+/* Navbar logo */
+
 .enlarge-on-cursor-hover {
   cursor: pointer;
   transition: transform 0.7s ease;
@@ -6,6 +8,8 @@
 .enlarge-on-cursor-hover:hover {
   transform: scale(1.1);
 }
+
+/* Adjust the level of scrolling when clicking on the navbar links */
 
 html {
   scroll-padding-top: 82px;
@@ -17,6 +21,8 @@ html {
     scroll-margin-top: 60px;
   }
 }
+
+/* WhatsApp button */
 
 .whatsapp-button {
   position: fixed;
@@ -48,6 +54,8 @@ html {
   transform: scale(1.05);
 }
 
+/* Headings style */
+
 .heading-1 {
   text-align: center;
   margin-bottom: 0.5rem; /* mb-2 */
@@ -55,10 +63,79 @@ html {
   text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3); /* Adjust values as needed */
 }
 
+/* Products and services styles and animations */
+
 .product-image-bg-color {
   background: #f1f1f1;
 }
 
 .service-image-bg-color {
   background: #d9d9d9;
+}
+
+@keyframes appear-growing {
+  from {
+    opacity: 0;
+    filter: blur(1px);
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    scale: 1;
+  }
+}
+
+@keyframes appear-sliding-from-left {
+  from {
+    opacity: 0;
+    filter: blur(1px);
+    scale: 0.5;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    scale: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes appear-sliding-from-right {
+  from {
+    opacity: 0;
+    filter: blur(1px);
+    scale: 0.5;
+    transform: translateX(+100px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    scale: 1;
+    transform: translateX(0px);
+  }
+}
+
+@media (min-width: 768px) {
+  .animated-appear-growing {
+    animation: appear-growing linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+}
+
+@media (max-width: 767px) {
+  .animated-appear-sliding-from-left {
+    opacity: 0;
+    animation: appear-sliding-from-left linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+
+  .animated-appear-sliding-from-right {
+    opacity: 0;
+    animation: appear-sliding-from-right linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
 }

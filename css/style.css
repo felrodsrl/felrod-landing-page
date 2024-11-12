@@ -139,3 +139,63 @@ html {
     animation-range: entry 0% cover 30%;
   }
 }
+
+/* Nosotros logo */
+
+@keyframes logo-appear-growing {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+    filter: drop-shadow(-5px 5px 4px rgba(0, 0, 0, 0.6));
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: drop-shadow(-5px 5px 4px rgba(0, 0, 0, 0.6));
+  }
+}
+
+@keyframes description-appear-growing {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .animated-appear-growing-for-logo {
+    animation: logo-appear-growing 5s ease-out;
+    filter: drop-shadow(-5px 5px 4px rgba(0, 0, 0, 0.6));
+    transition: transform 0.7s ease, filter 0.7s ease;
+  }
+
+  .animated-appear-growing-for-logo:hover {
+    transform: scale(1.01);
+    filter: drop-shadow(-10px 10px 7px rgba(0, 0, 0, 0.6));
+  }
+
+  .animated-appear-growing-for-description {
+    animation: description-appear-growing 5s ease-out forwards;
+    transition: transform 0.7s ease;
+  }
+}
+
+@media (max-width: 767px) {
+  .animated-appear-growing-for-logo {
+    opacity: 0;
+    animation: logo-appear-growing linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+
+  .animated-appear-growing-for-description {
+    opacity: 0;
+    animation: description-appear-growing linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+}

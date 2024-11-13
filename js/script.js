@@ -22,7 +22,7 @@ const initializeWhatsAppButton = () => {
   const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
   if (isMobile) {
     whatsAppButton.href =
-      "https://wa.me/5493764711717?text=Hola,%20me%20gustar%C3%ADa%20contactarlos."; // TODO: Add the correct phone number
+      "https://wa.me/5493755713678?text=Hola,%20me%20gustar%C3%ADa%20contactarlos.";
   }
 
   // Display spinner for a short period of time when clicked
@@ -30,9 +30,7 @@ const initializeWhatsAppButton = () => {
 };
 
 const displaySpinnerForShortPeriodOfTime = () => {
-  const whatsAppButtonSpinner = document.getElementById(
-    "whatsapp-button-spinner"
-  );
+  const whatsAppButtonSpinner = document.getElementById("whatsapp-button-spinner");
   const whatsAppButtonIcon = document.getElementById("whatsapp-button-icon");
   whatsAppButtonSpinner.classList.toggle("visually-hidden");
   whatsAppButtonIcon.classList.toggle("visually-hidden");

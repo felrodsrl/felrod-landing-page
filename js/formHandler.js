@@ -12,9 +12,7 @@ window.onload = function () {
 };
 
 function setupFormSubmission() {
-  document
-    .getElementById("contact-form")
-    .addEventListener("submit", handleFormSubmit);
+  document.getElementById("contact-form").addEventListener("submit", handleFormSubmit);
 }
 
 async function handleFormSubmit(event) {
@@ -36,12 +34,8 @@ async function handleFormSubmit(event) {
 
 function setSubmitButtonLoadingState(isLoading) {
   const submitButton = document.getElementById("submit-button");
-  const submitButtonSpinner = document.getElementById(
-    "form-submit-button-spinner"
-  );
-  const submitButtonText = document.getElementById(
-    "form-submit-button-inner-text"
-  );
+  const submitButtonSpinner = document.getElementById("form-submit-button-spinner");
+  const submitButtonText = document.getElementById("form-submit-button-inner-text");
 
   submitButton.disabled = isLoading;
   submitButtonSpinner.classList.toggle("visually-hidden", !isLoading);

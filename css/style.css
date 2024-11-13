@@ -199,3 +199,56 @@ html {
     animation-range: entry 0% cover 30%;
   }
 }
+
+/* Background images */
+
+.nosotros-section-bg-image {
+  background-image: url("./../assets/background_5.svg"), url("./../assets/background_6.svg");
+  background-repeat: no-repeat;
+}
+
+.products-and-services-section-bg-image {
+  background-image: url("./../assets/background_1.svg");
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .nosotros-section-bg-image {
+    background-position: -500px -0px, 350px 250px;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .nosotros-section-bg-image {
+    background-position: -275px -0px, 380px 75px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .nosotros-section-bg-image {
+    background-position: -275px -0px, 600px 10px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .nosotros-section-bg-image {
+    background-position: -200px -0px, 800px -0px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .nosotros-section-bg-image {
+    background-position: -200px -0px, 930px -25px;
+  }
+}
+
+/* Extra-extra large devices (very large desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .nosotros-section-bg-image {
+    background-position: -160px -0px, 1150px -80px;
+  }
+}

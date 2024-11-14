@@ -418,7 +418,7 @@
     </section>
 
     <!-- Contactos -->
-    <section id="contactos" class="p-4 contactos-section-bg-image">
+    <section id="contactos" class="p-4 contactos-section-bg-image pb-5">
       <h1 class="heading-1">Contactos</h1>
       <div class="container-lg">
         <!-- Map and contact container -->
@@ -505,7 +505,7 @@
             ¿Tienes alguna consulta o quieres que nos contactemos contigo? No dudes en dejarnos un
             mensaje.
           </p>
-          <form id="contact-form">
+          <form id="contact-form" method="POST">
             <input id="contact-number" type="hidden" name="contact_number" />
 
             <div class="row">
@@ -541,14 +541,16 @@
               </div>
             </div>
 
-            <label for="message">Mensaje (Opcinal)</label>
+            <label for="message">Mensaje</label>
             <textarea
               id="message"
               name="user_message"
               class="form-control border border-dark-subtle mt-1"
+              rows="3"
+              required
             ></textarea>
 
-            <button id="submit-button" type="submit" class="btn btn-primary mt-3 mb-5">
+            <button id="submit-button" type="submit" class="btn btn-primary mt-3 mb-3">
               <span
                 id="form-submit-button-spinner"
                 class="spinner-border spinner-border-sm visually-hidden"
@@ -584,10 +586,6 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
     <script type="text/javascript" src="js/formHandler.js"></script>
     <script type="text/javascript" src="js/script.js"></script>

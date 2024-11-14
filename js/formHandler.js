@@ -1,11 +1,3 @@
-// Initialize EmailJS
-(function () {
-  const EMAILJS_PUBLIC_KEY = "K9vpFLOoR3eMQByzT";
-  emailjs.init({
-    publicKey: EMAILJS_PUBLIC_KEY,
-  });
-})();
-
 // Form submission handler
 window.onload = function () {
   setupFormSubmission();
@@ -22,11 +14,24 @@ async function handleFormSubmit(event) {
 
   assignRandomContactNumber();
 
+  const formData = new FormData(this);
+
   try {
-    await sendEmail(this);
-    handleSuccess();
+    const response = await fetch("./../php/sendMail.php", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (response.ok) {
+      handleSuccess();
+    } else {
+      const errorData = await response.json();
+      console.log("Error: ", errorData.message);
+      handleFailure();
+    }
   } catch (error) {
-    handleFailure(error);
+    console.error("Network error: ", error);
+    handleFailure();
   } finally {
     setSubmitButtonLoadingState(false);
   }
@@ -47,11 +52,8 @@ function assignRandomContactNumber() {
 }
 
 function generateRandomNumber() {
-  return Math.floor(Math.random() * 1000000);
-}
-
-async function sendEmail(form) {
-  return await emailjs.sendForm("contact_service", "contact_form", form);
+  // returns a random number between 100000 and 999999, in other words, a number of 6 digits
+  return Math.floor(899999 * Math.random() + 100000);
 }
 
 function handleSuccess() {
@@ -62,12 +64,11 @@ function handleSuccess() {
   );
 }
 
-function handleFailure(error) {
+function handleFailure() {
   appendAlert(
     "<i class='bi bi-exclamation-triangle-fill'></i> Hubo un error al enviar el formulario, intentelo de nuevo más tarde",
     "danger"
   );
-  console.log("FAILED...", error);
 }
 
 function clearFormFields() {

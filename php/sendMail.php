@@ -4,11 +4,17 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use Dotenv\Dotenv;
 
-// Get data from the request
-$contactNumber = $_POST["contact_number"];
-$userName = $_POST["user_name"];
-$userEmail = $_POST["user_email"];
-$userMessage = $_POST["user_message"];
+const RECAPTCHA_VERIFICATION_ENDPOINT = "https://www.google.com/recaptcha/api/siteverify";
+
+$recaptchaResponse = $_POST["g-recaptcha-response"];
+
+if(!isset($recaptchaResponse) || empty($recaptchaResponse)) {
+    http_response_code(400);
+    echo json_encode([
+        "message" => "ReCAPTCHA no fue resuelto. Por favor, intente de nuevo."
+    ]);
+    exit;
+}
 
 // Load .env file and environment variables
 $dotenv = Dotenv::createImmutable(__DIR__, "./../.env");
@@ -18,6 +24,26 @@ $smtpHost = $_ENV['SMTP_HOST'];
 $smtpUser = $_ENV['SMTP_USER'];
 $smtpPassword = $_ENV['SMTP_PASSWORD'];
 $smtpPort = $_ENV['SMTP_PORT'];
+$secretKey = $_ENV['GOOGLE_RECAPTCHA_V2_SECRET_KEY'];
+
+// Verify recaptcha
+$verifyResponse = file_get_contents(
+    RECAPTCHA_VERIFICATION_ENDPOINT. "?secret=" . $secretKey . "&response=" . $recaptchaResponse);
+$response = json_decode($verifyResponse);
+
+if(!$response->success) {
+    http_response_code(403);
+    echo json_encode([
+        "message" => "La verificación del ReCAPTCHA falló. Por favor, intente de nuevo."
+    ]);
+    exit;
+}
+
+// Get data from the request
+$contactNumber = $_POST["contact_number"];
+$userName = $_POST["user_name"];
+$userEmail = $_POST["user_email"];
+$userMessage = $_POST["user_message"];
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);

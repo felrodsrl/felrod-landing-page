@@ -1,3 +1,10 @@
+const HttpStatus = {
+  OK: 200,
+  BAD_REQUEST: 400,
+  FORBIDDEN: 403,
+  INTERNAL_SERVER_ERROR: 500,
+};
+
 // Form submission handler
 window.onload = function () {
   setupFormSubmission();
@@ -22,18 +29,27 @@ async function handleFormSubmit(event) {
       body: formData,
     });
 
-    if (response.ok) {
+    if (response.status === HttpStatus.OK) {
       handleSuccess();
-    } else {
+    } else if (
+      response.status === HttpStatus.BAD_REQUEST ||
+      response.status === HttpStatus.FORBIDDEN
+    ) {
       const errorData = await response.json();
       console.log("Error: ", errorData.message);
-      handleFailure();
+      handleFailure(errorData.message);
+    } else if (response.status === HttpStatus.INTERNAL_SERVER_ERROR) {
+      const errorData = await response.json();
+      console.error("Server side error: ", errorData.message);
+      handleFailure("Hubo un problema, intentelo de nuevo.");
     }
   } catch (error) {
     console.error("Network error: ", error);
-    handleFailure();
+    handleFailure("Hubo un problema de conexión, intentelo de nuevo mas tarde.");
   } finally {
     setSubmitButtonLoadingState(false);
+    disableSubmitButton();
+    resetRecaptcha();
   }
 }
 
@@ -59,16 +75,13 @@ function generateRandomNumber() {
 function handleSuccess() {
   clearFormFields();
   appendAlert(
-    "<i class='bi bi-check-circle-fill'></i> Su mensaje fue enviado correctamente",
+    "<i class='bi bi-check-circle-fill'></i> Su mensaje fue enviado correctamente.",
     "success"
   );
 }
 
-function handleFailure() {
-  appendAlert(
-    "<i class='bi bi-exclamation-triangle-fill'></i> Hubo un error al enviar el formulario, intentelo de nuevo más tarde",
-    "danger"
-  );
+function handleFailure(error) {
+  appendAlert("<i class='bi bi-exclamation-triangle-fill'></i> " + error, "danger");
 }
 
 function clearFormFields() {
@@ -95,3 +108,17 @@ const appendAlert = (message, type) => {
   alertPlaceholder.append(wrapper);
   alertPlaceholder.scrollIntoView();
 };
+
+function enableSubmitButton() {
+  document.getElementById("submit-button").disabled = false;
+}
+
+function disableSubmitButton() {
+  document.getElementById("submit-button").disabled = true;
+}
+
+function resetRecaptcha() {
+  if (typeof grecaptcha !== "undefined") {
+    grecaptcha.reset();
+  }
+}

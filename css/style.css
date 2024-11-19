@@ -184,6 +184,11 @@ html {
     animation: description-appear-growing 5s ease-out forwards;
     transition: transform 0.7s ease;
   }
+
+  .nosotros-paragraph-appear-sliding-from-left {
+    opacity: 0;
+    animation: appear-sliding-from-left 5s ease-out forwards;
+  }
 }
 
 @media (max-width: 767px) {
@@ -318,4 +323,83 @@ html {
 .contactos-section-bg-image {
   background: linear-gradient(to top, rgba(255, 255, 255, 0) 80%, #fff 100%);
   background-color: #dee2e671;
+}
+
+/* Footer */
+footer {
+  height: 93px;
+}
+
+@media (max-width: 768px) {
+  footer {
+    height: 100px;
+  }
+}
+
+/* social-media-icons-animation */
+
+.highlight-on-hover-header {
+  color: #212529;
+  position: relative; /* Allows positioning the blue line */
+  display: inline-block; /* Ensures proper alignment */
+  cursor: pointer; /* Changes cursor to indicate interactivity */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover animations */
+}
+
+.highlight-on-hover-header:hover {
+  transform: translateY(-5px); /* Moves the icon slightly upwards */
+  color: #007bff; /* Bootstrap's primary blue */
+}
+
+.highlight-on-hover-header::after {
+  content: ""; /* Adds an empty pseudo-element */
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Adjusts the position below the icon */
+  width: 100%;
+  height: 2px; /* Height of the blue line */
+  background-color: #007bff; /* Color of the blue line */
+  transform: scaleX(0); /* Hides the line initially */
+  transform-origin: center; /* Animates from the center */
+  transition: transform 0.3s ease; /* Smooth hover animation */
+}
+
+.highlight-on-hover-header:hover::after {
+  transform: scaleX(1); /* Expands the line on hover */
+}
+
+.icon-hover-footer {
+  color: white;
+  position: relative; /* Allows positioning the blue line */
+  display: inline-block; /* Ensures proper alignment */
+  cursor: pointer; /* Changes cursor to indicate interactivity */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover animations */
+}
+
+.icon-hover-footer:hover {
+  transform: translateY(-5px); /* Moves the icon slightly upwards */
+  color: #007bff; /* Bootstrap's primary blue */
+}
+
+.icon-hover-footer::after {
+  content: ""; /* Adds an empty pseudo-element */
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Adjusts the position below the icon */
+  width: 100%;
+  height: 2px; /* Height of the blue line */
+  background-color: #007bff; /* Color of the blue line */
+  transform: scaleX(0); /* Hides the line initially */
+  transform-origin: center; /* Animates from the center */
+  transition: transform 0.3s ease; /* Smooth hover animation */
+}
+
+.icon-hover-footer:hover::after {
+  transform: scaleX(1); /* Expands the line on hover */
+}
+
+/* Customize dropdown list */
+.customized-dropdown-menu {
+  min-width: auto;
+  width: auto;
 }
